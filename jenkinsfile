@@ -1,22 +1,23 @@
 pipeline {
     agent any
-
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
-                bat 'mvn clean install'
+                // Checkout your repository from Git
+                git 'https://github.com/bhanuprakash030201/docker.git'
             }
         }
-        stage('Test') {
+        stage('Compile') {
             steps {
-                bat 'mvn test'
+                // Assuming your Java files are in the src folder
+                bat 'javac -d out src\\*.java'
             }
         }
-        stage('Deploy') {
+        stage('Run') {
             steps {
-                bat 'scp target/*.jar user@server:/path/to/deploy'
+                // Run your compiled Java classes (adjust main class accordingly)
+                bat 'java -cp out YourMainClass'
             }
         }
     }
 }
-
