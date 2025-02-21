@@ -3,19 +3,18 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout your repository from Git
-                git 'https://github.com/bhanuprakash030201/docker.git'
+                git branch: 'master', url: 'https://github.com/bhanuprakash030201/docker.git'
             }
         }
         stage('Compile') {
             steps {
-                // Assuming your Java files are in the src folder
+                bat 'rmdir /s /q out' // Clean the out directory (Windows)
+                bat 'mkdir out' // Recreate the out directory
                 bat 'javac -d out src\\*.java'
             }
         }
         stage('Run') {
             steps {
-                // Run your compiled Java classes (adjust main class accordingly)
                 bat 'java -cp out mottu.bhanu'
             }
         }
