@@ -16,7 +16,7 @@ pipeline {
         stage('Run') {
             steps {
                 // Run your compiled Java classes (adjust main class accordingly)
-                bat 'java -cp out YourMainClass'
+                bat 'java -cp out mottu.bhanu'
             }
         }
     }
