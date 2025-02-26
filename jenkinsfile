@@ -8,7 +8,6 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                bat 'rmdir /s /q out' // Clean the out directory (Windows)
                 bat 'mkdir out' // Recreate the out directory
                 bat 'javac -d out src\\*.java'
             }
