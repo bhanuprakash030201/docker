@@ -8,7 +8,10 @@ pipeline {
         }
         stage('Compile') {
             steps {
-                bat 'mkdir out' // Recreate the out directory
+                bat '''
+                if exist out rmdir /s /q out
+                mkdir out
+                '''
                 bat 'javac -d out src\\mottu\\*.java'
             }
         }
