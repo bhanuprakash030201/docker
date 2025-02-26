@@ -9,7 +9,7 @@ pipeline {
         stage('Compile') {
             steps {
                 bat 'mkdir out' // Recreate the out directory
-                bat 'javac -d out src\\*.java'
+                bat 'javac -d out src\\mottu\\*.java'
             }
         }
         stage('Run') {
