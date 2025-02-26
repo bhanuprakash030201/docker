@@ -1,9 +1,19 @@
 pipeline {
     agent any
+    environment {
+        GIT_CREDENTIALS = credentials('usernew')
+    }
     stages {
+        stage('Cleanup') {
+            steps {
+                deleteDir() // Clean workspace before new checkout
+            }
+        }
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/bhanuprakash030201/docker.git'
+                git branch: 'master',
+                    credentialsId: 'usernew',
+                    url: 'https://github.com/bhanuprakash030201/docker.git'
             }
         }
         stage('Compile') {

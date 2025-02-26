@@ -1,0 +1,159 @@
+[33mcommit 48fc5388ddbeb0512bafb89ff4b793f241ea19f3[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: bhanuprakash030201 <bhanuprakash030201@gmail.com>
+Date:   Fri Feb 21 19:08:52 2025 +0530
+
+    111 commit
+
+[1mdiff --git a/jenkinsfile b/jenkinsfile[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8ed14cd[m
+[1m--- /dev/null[m
+[1m+++ b/jenkinsfile[m
+[36m@@ -0,0 +1,22 @@[m
+[32m+[m[32mpipeline {[m
+[32m+[m[32m    agent any[m
+[32m+[m
+[32m+[m[32m    stages {[m
+[32m+[m[32m        stage('Build') {[m
+[32m+[m[32m            steps {[m
+[32m+[m[32m                bat 'mvn clean install'[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        stage('Test') {[m
+[32m+[m[32m            steps {[m
+[32m+[m[32m                bat 'mvn test'[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m        stage('Deploy') {[m
+[32m+[m[32m            steps {[m
+[32m+[m[32m                bat 'scp target/*.jar user@server:/path/to/deploy'[m
+[32m+[m[32m            }[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m
+
+[33mcommit 660b265b634b1c10be53f8b356e287eaf5269b1a[m
+Author: bhanuprakash030201 <bhanuprakash030201@gmail.com>
+Date:   Fri Feb 21 17:04:45 2025 +0530
+
+    Create README.md
+
+[1mdiff --git a/README.md b/README.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f8d728c[m
+[1m--- /dev/null[m
+[1m+++ b/README.md[m
+[36m@@ -0,0 +1 @@[m
+[32m+[m[32mwww[m
+
+[33mcommit 810767361600308c9ca0fac269a7c959cd5b3d7f[m
+Author: bhanuprakash030201 <bhanuprakash030201@gmail.com>
+Date:   Fri Feb 21 16:49:30 2025 +0530
+
+    parial commit
+
+[1mdiff --git a/.classpath b/.classpath[m
+[1mnew file mode 100644[m
+[1mindex 0000000..52f234a[m
+[1m--- /dev/null[m
+[1m+++ b/.classpath[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<classpath>[m
+[32m+[m	[32m<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-23">[m
+[32m+[m		[32m<attributes>[m
+[32m+[m			[32m<attribute name="module" value="true"/>[m
+[32m+[m		[32m</attributes>[m
+[32m+[m	[32m</classpathentry>[m
+[32m+[m	[32m<classpathentry kind="src" path="src"/>[m
+[32m+[m	[32m<classpathentry kind="output" path="bin"/>[m
+[32m+[m[32m</classpath>[m
+[1mdiff --git a/.project b/.project[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a57cf2b[m
+[1m--- /dev/null[m
+[1m+++ b/.project[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32m<?xml version="1.0" encoding="UTF-8"?>[m
+[32m+[m[32m<projectDescription>[m
+[32m+[m	[32m<name>JD</name>[m
+[32m+[m	[32m<comment></comment>[m
+[32m+[m	[32m<projects>[m
+[32m+[m	[32m</projects>[m
+[32m+[m	[32m<buildSpec>[m
+[32m+[m		[32m<buildCommand>[m
+[32m+[m			[32m<name>org.eclipse.jdt.core.javabuilder</name>[m
+[32m+[m			[32m<arguments>[m
+[32m+[m			[32m</arguments>[m
+[32m+[m		[32m</buildCommand>[m
+[32m+[m	[32m</buildSpec>[m
+[32m+[m	[32m<natures>[m
+[32m+[m		[32m<nature>org.eclipse.jdt.core.javanature</nature>[m
+[32m+[m	[32m</natures>[m
+[32m+[m[32m</projectDescription>[m
+[1mdiff --git a/.settings/org.eclipse.core.resources.prefs b/.settings/org.eclipse.core.resources.prefs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..99f26c0[m
+[1m--- /dev/null[m
+[1m+++ b/.settings/org.eclipse.core.resources.prefs[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32meclipse.preferences.version=1[m
+[32m+[m[32mencoding/<project>=UTF-8[m
+[1mdiff --git a/.settings/org.eclipse.jdt.core.prefs b/.settings/org.eclipse.jdt.core.prefs[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6f94d6a[m
+[1m--- /dev/null[m
+[1m+++ b/.settings/org.eclipse.jdt.core.prefs[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32meclipse.preferences.version=1[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.targetPlatform=23[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.compliance=23[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.lineNumber=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.localVariable=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.debug.sourceFile=generate[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.enablePreviewFeatures=disabled[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.problem.reportPreviewFeatures=warning[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.release=enabled[m
+[32m+[m[32morg.eclipse.jdt.core.compiler.source=23[m
+[1mdiff --git a/bin/module-info.class b/bin/module-info.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..2e1661f[m
+Binary files /dev/null and b/bin/module-info.class differ
+[1mdiff --git a/bin/mottu/bhanu.class b/bin/mottu/bhanu.class[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a8638f3[m
+Binary files /dev/null and b/bin/mottu/bhanu.class differ
+[1mdiff --git a/src/module-info.java b/src/module-info.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ff29ada[m
+[1m--- /dev/null[m
+[1m+++ b/src/module-info.java[m
+[36m@@ -0,0 +1,8 @@[m
+[32m+[m[32m/**[m
+[32m+[m[32m *[m[41m [m
+[32m+[m[32m */[m
+[32m+[m[32m/**[m
+[32m+[m[32m *[m[41m [m
+[32m+[m[32m */[m
+[32m+[m[32mmodule JD {[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/src/mottu/bhanu.java b/src/mottu/bhanu.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6e93233[m
+[1m--- /dev/null[m
+[1m+++ b/src/mottu/bhanu.java[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32mpackage mottu;[m
+[32m+[m
+[32m+[m[32mpublic class bhanu {[m
+[32m+[m
+[32m+[m	[32mpublic static void main(String[] args) {[m
+[32m+[m		[32m// TODO Auto-generated method stub[m
+[32m+[m		[32mSystem.out.print("Hello wrold");[m
+[32m+[m
+[32m+[m	[32m}[m
+[32m+[m
+[32m+[m[32m}[m
