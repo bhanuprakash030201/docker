@@ -4,7 +4,7 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 
 # Copy the compiled Java classes into the container
-COPY out/ /app/
+COPY docker/ /app/
 
 # Specify the command to run the Java application
 CMD ["java", "-cp", "./", "mottu.bhanu"]
